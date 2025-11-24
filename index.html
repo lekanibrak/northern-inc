@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Northern Logistics – Driver Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-left">
+        <h1 class="app-title">Hi, Olalekan Ibrahim</h1>
+        <p class="app-subtitle">Weekly schedule</p>
+      </div>
+      <div class="app-header-right">
+        <button class="help-btn">HELP</button>
+        <div class="info-circle">i</div>
+      </div>
+    </header>
+
+    <main>
+      <section id="screen-dashboard" class="screen active">
+        <div class="week-strip">
+          <div class="week-day"><span class="day">Mon</span><span class="date">17</span><span class="earning">$173.33</span></div>
+          <div class="week-day"><span class="day">Tue</span><span class="date">18</span><span class="earning">$176.67</span></div>
+          <div class="week-day"><span class="day">Wed</span><span class="date">19</span><span class="earning">$147.92</span></div>
+          <div class="week-day"><span class="day">Thu</span><span class="date">20</span><span class="earning">$185</span></div>
+          <div class="week-day"><span class="day">Fri</span><span class="date">21</span><span class="earning">$158.75</span></div>
+          <div class="week-day"><span class="day">Sat</span><span class="date">22</span><span class="dot"></span></div>
+          <div class="week-day active-day"><span class="day">Sun</span><span class="date">23</span></div>
+        </div>
+
+        <div class="banner-availability">
+          <div><strong>Your availability for next week is set</strong><br /><span>Click here to edit or review</span></div>
+          <div class="banner-timer">3d 18h</div>
+        </div>
+
+        <div class="dayoff-card">
+          <div class="dayoff-illustration"></div>
+          <p class="dayoff-text">Looks like you don’t have a route today.<br />Enjoy your day off!</p>
+          <button class="primary-btn">View drop off points</button>
+        </div>
+      </section>
+
+      <section id="screen-route" class="screen">
+        <h2>Route</h2>
+        <p>No active route is assigned for today.</p>
+        <button class="primary-btn">Request a route</button>
+      </section>
+
+      <section id="screen-inbox" class="screen">
+        <h2 class="screen-title">Inbox</h2>
+        <ul class="message-list">
+          <li class="message-item">
+            <div class="avatar">EA</div>
+            <div class="message-body">
+              <p class="message-title">Envoi Announcements</p>
+              <p class="message-snippet">Usual 2pm should be ok. How many packa...</p>
+              <span class="message-meta">a day ago</span>
+            </div>
+            <span class="badge">1</span>
+          </li>
+          <li class="message-item">
+            <div class="avatar">GT</div>
+            <div class="message-body">
+              <p class="message-title">Greater Toronto Area</p>
+              <p class="message-snippet">The route is filled. Thank you.</p>
+              <span class="message-meta">a day ago</span>
+            </div>
+            <span class="badge">3</span>
+          </li>
+          <li class="message-item">
+            <div class="avatar">EO</div>
+            <div class="message-body">
+              <p class="message-title">Envoi Operations</p>
+              <p class="message-snippet">👋 Hello Olalekan Ibrahim,</p>
+              <span class="message-meta">14 hours ago</span>
+            </div>
+            <span class="badge">1</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="screen-tools" class="screen">
+        <h2 class="screen-title">Scanner</h2>
+        <div class="card-list">
+          <div class="tool-card"><div><p class="tool-title">Store Pickup</p><p class="tool-subtitle">Pickup Scanner</p></div><div class="tool-icon">▮▯▮</div></div>
+          <div class="tool-card"><div><p class="tool-title">Return to Sender</p><p class="tool-subtitle">Returns</p></div><div class="tool-icon">▮▯▮</div></div>
+          <div class="tool-card"><div><p class="tool-title">Drop Off Point</p><p class="tool-subtitle">Returns</p></div><div class="tool-icon">▮▯▮</div></div>
+          <div class="tool-card"><div><p class="tool-title">Warehouse</p><p class="tool-subtitle">Sorting, Loading, Returns</p></div><div class="tool-icon">📦</div></div>
+        </div>
+      </section>
+
+      <section id="screen-profile" class="screen">
+        <div class="profile-header">
+          <div class="profile-avatar-large">OI</div>
+          <h2>Olalekan Ibrahim</h2>
+          <a href="#" class="profile-link">View Account</a>
+        </div>
+        <ul class="profile-list">
+          <li class="profile-item"><span>History</span><span>›</span></li>
+          <li class="profile-item"><span>Preferences</span><span>›</span></li>
+          <li class="profile-item"><span>Referral</span><span>›</span></li>
+          <li class="profile-item"><span>Help</span><span>›</span></li>
+          <li class="profile-item"><span>Pay</span><span>›</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-target="screen-dashboard"><span class="nav-icon">🏠</span><span class="nav-label">Dashboard</span></button>
+      <button class="nav-item" data-target="screen-route"><span class="nav-icon">🚐</span><span class="nav-label">Route</span></button>
+      <button class="nav-item" data-target="screen-inbox"><span class="nav-icon">💬</span><span class="nav-label">Inbox</span></button>
+      <button class="nav-item" data-target="screen-tools"><span class="nav-icon">🛠</span><span class="nav-label">Tools</span></button>
+      <button class="nav-item" data-target="screen-profile"><span class="nav-icon">👤</span><span class="nav-label">Profile</span></button>
+    </nav>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
