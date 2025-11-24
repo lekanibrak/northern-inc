@@ -1,0 +1,39 @@
+# Northern Mobile (FastAPI demo client)
+
+Simple Expo/React Native app that talks to `# main.py for The Northern inc.py`.
+
+## Prereqs
+- Node 18+
+- npm or yarn
+- Expo CLI: `npm i -g expo-cli` (optional; `npx expo start` also works)
+- Backend running: `python3 "# main.py for The Northern inc.py"` (or `uvicorn "# main.py for The Northern inc:app"` if you prefer uvicorn directly)
+
+## Configure API base
+Set the backend URL for the device/simulator you use:
+- Simulator: `EXPO_PUBLIC_API_BASE=http://127.0.0.1:8000`
+- Physical device on same Wi‑Fi: `EXPO_PUBLIC_API_BASE=http://<your-lan-ip>:8000`
+
+You can set this inline before `npm run start` or add it to an `.env` file (Expo reads `EXPO_PUBLIC_*` automatically).
+
+## Run the app
+```bash
+cd mobile
+npm install
+EXPO_PUBLIC_API_BASE=http://127.0.0.1:8000 npm run start
+```
+Then open the app in iOS/Android or web via the Expo dev menu.
+
+## What it does
+- Login with phone/password -> `/auth/login`
+- Fetch driver dashboard -> `/driver/dashboard`
+- Fetch inbox -> `/driver/inbox`
+- Submit a scan event -> `/scan`
+- Stores the JWT securely via Expo Secure Store; on app open it restores the token and calls `/me` to hydrate the user.
+
+Adjust endpoints in `src/api.ts` or add more methods as backend grows.
+
+## Real auth / JWT
+- The login screen expects `/auth/login` to return `{ token, user }` where `token` is a JWT usable as `Authorization: Bearer <token>`.
+- On startup we read the token from secure storage and call `/me` to fetch the user; update those two endpoints when you wire real auth.
+- To revoke locally, use the Logout action (it clears the stored token).
+- Dev mock users (backend): `+17050001111 / driverpass`, `+17050002222 / warehousepass`.
